@@ -1,7 +1,7 @@
 /* Exercise 5 */
-*{
+/* *{
     border: solid 1px black;
-}
+} */
 
 html {
     height: 100%;
@@ -68,13 +68,13 @@ main {
 }
 
 .machine {
-    width: 30%;
+    /* width: 30%; */
     background-color: #ece4d9;
     border: solid 4px #664b3d;
     /* Exercise 7 */
 	margin: 0 1% 40px 1%;
     /* Exercise 8 */
-	display: inline-block;
+	/*display: inline-block;*/
 	vertical-align: top;
 
 }
@@ -101,3 +101,34 @@ footer>p {
 
 
 /* Part 2 - Responsive flexbox grid */
+main{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; */
+}
+
+@media (min-width: 800px){
+main{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+}
+
+@media (min-width: 801px) and (max-width: 1099px){
+.machine{
+    width: 46%;
+    
+}    
+}
+
+
+@media (min-width: 1100px){
+    .machine{
+        width: 30%;
+        max-width: 450px;
+    }
+}
