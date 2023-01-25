@@ -85,7 +85,7 @@
         </div>
 
         <div class="machine dirigible">
-            <img src="images/dirigible-1878.jpeg">
+            <img src="images/dirigible-1878.jpg">
             <h3>Dirigicycle 1878</h3>
             <p>The dirigible is a gas-floatation powered ariship that could be steared, a marked improvement over
                 balloons which were subject to wind currents. Charles F. Ritchel called his machine the Dirigicycle, and
@@ -148,7 +148,35 @@
 
     <script>
         //Part 3 Javascript sorting function
+        /*
+        get elements
+        if(text is clicked){
+            find the element
+            show only elements that match
+        }
+        */
+        const machines = document.querySelectorAll('.machine');
+        const anchors = document.querySelectorAll('a');
+        console.log(machines, anchors);
 
+        // let myClassNames = el.classList;
+        // let kind = myClassNames.contains('glider');
+
+        function sort(event){
+            let category = event.target.id;
+            machines.forEach( function (div) {
+                let cardClass = div.classList;
+                if(!cardClass.contains(category)){
+                    div.style.display = "none";
+                }else{
+                    div.style.display = "block";    
+                }
+            });
+        }
+
+        anchors.forEach(function (atag) {
+            atag.addEventListener('click',sort);
+        });
     </script>
 </body>
 
